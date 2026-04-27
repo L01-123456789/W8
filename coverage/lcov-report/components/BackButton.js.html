@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for screens/HomeScreen.js</title>
+    <title>Code coverage report for components/BackButton.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">screens</a> HomeScreen.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> BackButton.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -39,7 +39,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -89,18 +89,14 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,33 +116,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import { TouchableOpacity, Image, StyleSheet } from "react-native";
+import { getStatusBarHeight } from "react-native-status-bar-height";
 &nbsp;
-import Background from "../components/Background";
-import Logo from "../components/Logo";
-import Header from "../components/Header";
-import Paragraph from "../components/Paragraph";
-import Button from "../components/Button";
-&nbsp;
-export default function HomeScreen({ navigation }) {
+export default function BackButton({ goBack }) {
   return (
-    &lt;Background&gt;
-      &lt;Logo /&gt;
-      &lt;Header&gt;Welcome 💫&lt;/Header&gt;
-      &lt;Paragraph&gt;Congratulations you are logged in.&lt;/Paragraph&gt;
-      &lt;Button
-        mode="outlined"
-        onPress={() =&gt;
-          navigation.reset({
-            index: 0,
-            routes: [{ name: "StartScreen" }],
-          })
-        }
-      &gt;
-        Sign out
-      &lt;/Button&gt;
-    &lt;/Background&gt;
+    &lt;TouchableOpacity onPress={goBack} style={styles.container} testID="back-button"&gt;
+      &lt;Image
+        style={styles.image}
+        source={require("../../assets/items/back.png")}
+      /&gt;
+    &lt;/TouchableOpacity&gt;
   );
 }
+&nbsp;
+const styles = StyleSheet.create({
+  container: {
+    position: "absolute",
+    top: 10 + getStatusBarHeight(),
+    left: 4,
+  },
+  image: {
+    width: 24,
+    height: 24,
+  },
+});
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
