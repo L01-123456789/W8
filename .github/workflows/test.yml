@@ -1,24 +1,27 @@
 name: SonarCloud
-
 on:
   push:
     branches:
       - main
-
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
-  sonar:
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Cần thiết để SonarCloud phân tích lịch sử code
 
-      - name: Install deps
+      - name: Install dependencies
         run: npm install
 
-      - name: Run tests with coverage
+      - name: Run Test & Generate Coverage
         run: npm run test:coverage
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1
+        uses: SonarSource/sonarcloud-github-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Tự động có sẵn
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # Bạn phải tạo Token này trên SonarCloud
