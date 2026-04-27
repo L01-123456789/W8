@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0  # Cần thiết để SonarCloud phân tích lịch sử code
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Run Test & Generate Coverage
         run: npm run test:coverage
