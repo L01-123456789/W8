@@ -18,10 +18,23 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/app.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.barelybear.Exlogrn"
     },
     "web": {
       "favicon": "./assets/app.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a2122f48-3869-4ee6-9a83-9399d060db4b"
+      }
+    },
+    "owner": "barelybear",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/a2122f48-3869-4ee6-9a83-9399d060db4b"
     }
   }
 }
