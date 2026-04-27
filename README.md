@@ -33,10 +33,24 @@ yarn install
 npx expo start
 ```
 
+## Testing
+
+- After install all dependencies, test is availible
+
+  ```base
+  npx jest
+  ```
+
 You can take a look on Expo's [docs](https://docs.expo.dev).
 
 ### Licence 🚨
 
 This template is released under the **[MIT License](LICENSE.md)**.
+
+### Badges
+
+<img width="256" height="60" alt="image" src="https://github.com/user-attachments/assets/0747e35b-f0f1-4d4c-9a92-54197436bc29" />
+[![SonarCloud](https://github.com/L01-123456789/W8/actions/workflows/test.yml/badge.svg)](https://github.com/L01-123456789/W8/actions/workflows/test.yml)
+
 
 Enjoy ✌🏽
