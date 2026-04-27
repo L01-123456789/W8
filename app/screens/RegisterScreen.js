@@ -42,6 +42,7 @@ export default function RegisterScreen({ navigation }) {
       <TextInput
         label="Name"
         returnKeyType="next"
+        testID="register-name-input"
         value={name.value}
         onChangeText={(text) => setName({ value: text, error: "" })}
         error={!!name.error}
@@ -49,6 +50,7 @@ export default function RegisterScreen({ navigation }) {
       />
       <TextInput
         label="Email"
+        testID="register-email-input"
         returnKeyType="next"
         value={email.value}
         onChangeText={(text) => setEmail({ value: text, error: "" })}
@@ -61,6 +63,7 @@ export default function RegisterScreen({ navigation }) {
       />
       <TextInput
         label="Password"
+        testID="register-password-input"
         returnKeyType="done"
         value={password.value}
         onChangeText={(text) => setPassword({ value: text, error: "" })}

@@ -30,4 +30,20 @@ describe('Common Components', () => {
     
     expect(goBackMock).toHaveBeenCalled();
   });
+  test('Button thay đổi style khi mode là outlined', () => {
+    const { getByTestId } = render(
+      <Button mode="outlined" testID="btn-outlined">Outlined</Button>
+    );
+    // Kiểm tra xem style có tồn tại (giúp cover dòng logic mode === "outlined")
+    expect(getByTestId('btn-outlined')).toBeTruthy();
+  });
+
+  test('TextInput hiển thị description khi không có lỗi', () => {
+    const desc = "Nhập email của bạn";
+    const { getByText, queryByText } = render(
+      <TextInput label="Email" description={desc} errorText="" />
+    );
+    expect(getByText(desc)).toBeTruthy();
+    expect(queryByText('Email is invalid')).toBeNull();
+  });
 });

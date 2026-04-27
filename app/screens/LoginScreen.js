@@ -38,6 +38,7 @@ export default function LoginScreen({ navigation }) {
       <TextInput
         label="Email"
         returnKeyType="next"
+        testID="login-email-input"
         value={email.value}
         onChangeText={(text) => setEmail({ value: text, error: "" })}
         error={!!email.error}
@@ -50,6 +51,7 @@ export default function LoginScreen({ navigation }) {
       <TextInput
         label="Password"
         returnKeyType="done"
+        testID="login-password-input"
         value={password.value}
         onChangeText={(text) => setPassword({ value: text, error: "" })}
         error={!!password.error}
